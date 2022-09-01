@@ -30,28 +30,29 @@ ENV LANG=nb_NO.UTF-8
 # install package dependencies
 RUN R -e "install.packages(c(\"rapbase\", \"remotes\", \"tinytex\"))" \
     && R -e "tinytex::install_tinytex()" \
-    && R -e "tinytex::tlmgr_install(c(\"hyphen-norwegian\",\
-                                      \"collection-langeuropean\",\
-                                      \"datetime\",\
-                                      \"fmtcount\",\
-                                      \"sectsty\",\
-                                      \"marginnote\",\
-                                      \"babel-norsk\",\
-                                      \"lato\",\
-                                      \"fontaxes\",\
-                                      \"caption\",\
-                                      \"fancyhdr\",\
-                                      \"lastpage\",\
-                                      \"textpos\",\
-                                      \"titlesec\",\
-                                      \"framed\",\
-                                      \"ragged2e\",\
-                                      \"ucs\",\
-                                      \"subfig\",\
-                                      \"eso-pic\",\
-                                      \"grfext\",\
-                                      \"oberdiek\",\
-                                      \"pdfpages\",\
+    && R -e "tinytex::tlmgr_install(c(\"hyphen-norwegian\", \
+                                      \"collection-langeuropean\", \
+                                      \"datetime\", \
+                                      \"fmtcount\", \
+                                      \"sectsty\", \
+                                      \"marginnote\", \
+                                      \"babel-norsk\", \
+                                      \"lato\", \
+                                      \"fontaxes\", \
+                                      \"caption\", \
+                                      \"fancyhdr\", \
+                                      \"lastpage\", \
+                                      \"textpos\", \
+                                      \"titlesec\", \
+                                      \"framed\", \
+                                      \"ragged2e\", \
+                                      \"ucs\", \
+                                      \"subfig\", \
+                                      \"eso-pic\", \
+                                      \"grfext\", \
+                                      \"oberdiek\", \
+                                      \"pdfpages\", \
+                                      \"microtype\", \
                                       \"pdflscape\"))"
 
 CMD ["R"]
