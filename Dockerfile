@@ -29,7 +29,11 @@ ENV LANG=nb_NO.UTF-8
 ENV TZ=Europe/Oslo
 
 # install package dependencies
-RUN R -e "install.packages(c(\"rapbase\", \"remotes\", \"tinytex\"))" \
+RUN install2.r --error --skipinstalled --ncpus -1 \
+    rapbase \
+    remotes \
+    tinytex \
+    && rm -rf /tmp/downloaded_packages \
     && R -e "tinytex::install_tinytex()" \
     && R -e "tinytex::tlmgr_install(c(\"hyphen-norwegian\", \
                                       \"collection-langeuropean\", \
