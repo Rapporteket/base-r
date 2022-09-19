@@ -26,6 +26,7 @@ RUN sed -i 's/^# *\(nb_NO.UTF-8\)/\1/' /etc/locale.gen \
 
 ENV LC_ALL=nb_NO.UTF-8
 ENV LANG=nb_NO.UTF-8
+ENV TZ=Europe/Oslo
 
 # install package dependencies
 RUN R -e "install.packages(c(\"rapbase\", \"remotes\", \"tinytex\"))" \
