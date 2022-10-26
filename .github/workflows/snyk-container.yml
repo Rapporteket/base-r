@@ -31,6 +31,7 @@ jobs:
       env:
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
       with:
+        command: monitor
         image: rapporteket/base-r
         args: --file=Dockerfile --severity-threshold=high
     - name: Upload result to GitHub Code Scanning
