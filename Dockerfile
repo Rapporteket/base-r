@@ -30,14 +30,37 @@ ENV LANG=nb_NO.UTF-8
 ENV TZ=Europe/Oslo
 
 # install package dependencies
-SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN install2.r --error --skipinstalled --ncpus -1 \
     rapbase \
     remotes \
+    tinytex \
     && rm -rf /tmp/downloaded_packages \
-    && wget -qO- "https://yihui.org/tinytex/install-unx.sh" | sh \
-    && mv /root/.TinyTeX /.TinyTeX \
-    && /.TinyTeX/bin/*/tlmgr path add \
+    && R -e "tinytex::install_tinytex()" \
+    && R -e "tinytex::tlmgr_install(c(\"hyphen-norwegian\", \
+                                      \"collection-langeuropean\", \
+                                      \"datetime\", \
+                                      \"fmtcount\", \
+                                      \"sectsty\", \
+                                      \"marginnote\", \
+                                      \"babel-norsk\", \
+                                      \"lato\", \
+                                      \"fontaxes\", \
+                                      \"caption\", \
+                                      \"fancyhdr\", \
+                                      \"lastpage\", \
+                                      \"textpos\", \
+                                      \"titlesec\", \
+                                      \"framed\", \
+                                      \"ragged2e\", \
+                                      \"ucs\", \
+                                      \"subfig\", \
+                                      \"eso-pic\", \
+                                      \"grfext\", \
+                                      \"oberdiek\", \
+                                      \"pdfpages\", \
+                                      \"microtype\", \
+                                      \"pdflscape\"))" \
+    && ~/.TinyTeX/bin/*/tlmgr path add \
     && tlmgr install \
         amsmath \
         babel-norsk \
