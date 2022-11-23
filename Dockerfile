@@ -60,6 +60,6 @@ RUN install2.r --error --skipinstalled --ncpus -1 \
                                       \"pdfpages\", \
                                       \"microtype\", \
                                       \"pdflscape\"))" \
-    && /root/.TinyTeX/bin/*/tlmgr path add 
+    && /root/.TinyTeX/bin/x86_64-linux/tlmgr path add 
 
 CMD ["R"]
