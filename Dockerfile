@@ -33,32 +33,57 @@ ENV TZ=Europe/Oslo
 RUN install2.r --error --skipinstalled --ncpus -1 \
     rapbase \
     remotes \
-    tinytex \
     && rm -rf /tmp/downloaded_packages \
-    && R -e "tinytex::install_tinytex()" \
-    && R -e "tinytex::tlmgr_install(c(\"hyphen-norwegian\", \
-                                      \"collection-langeuropean\", \
-                                      \"datetime\", \
-                                      \"fmtcount\", \
-                                      \"sectsty\", \
-                                      \"marginnote\", \
-                                      \"babel-norsk\", \
-                                      \"lato\", \
-                                      \"fontaxes\", \
-                                      \"caption\", \
-                                      \"fancyhdr\", \
-                                      \"lastpage\", \
-                                      \"textpos\", \
-                                      \"titlesec\", \
-                                      \"framed\", \
-                                      \"ragged2e\", \
-                                      \"ucs\", \
-                                      \"subfig\", \
-                                      \"eso-pic\", \
-                                      \"grfext\", \
-                                      \"oberdiek\", \
-                                      \"pdfpages\", \
-                                      \"microtype\", \
-                                      \"pdflscape\"))"
+    && tlmgr update --self --all \
+    && tlmgr install \
+        amsmath \
+        babel-norsk \
+        bigintcalc \
+        bitset \
+        booktabs \
+        caption \
+        collection-langeuropean \
+        datetime \
+        epstopdf-pkg \
+        eso-pic \
+        etexcmds \
+        etoolbox \
+        fancyhdr \
+        float \
+        fmtcount \
+        fontaxes \
+        framed \
+        geometry \
+        gettitlestring \
+        grfext \
+        hycolor \
+        hyperref \
+        hyphen-norwegian \
+        intcalc \
+        kvdefinekeys \
+        kvsetkeys \
+        lastpage \
+        latex-amsmath-dev \
+        lato \
+        letltxmacro \
+        ltxcmds \
+        marginnote \
+        microtype \
+        oberdiek \
+        pdfescape \
+        pdflscape \
+        pdfpages \
+        ragged2e \
+        refcount \
+        rerunfilecheck \
+        sectsty \
+        stringenc \
+        subfig \
+        textpos \
+        titlesec \
+        ucs \
+        uniquecounter \
+        xcolor \
+        zapfding
 
 CMD ["R"]
