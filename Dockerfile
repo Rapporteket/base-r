@@ -60,56 +60,6 @@ RUN install2.r --error --skipinstalled --ncpus -1 \
                                       \"pdfpages\", \
                                       \"microtype\", \
                                       \"pdflscape\"))" \
-    && ~/.TinyTeX/bin/*/tlmgr path add \
-    && tlmgr install \
-        amsmath \
-        babel-norsk \
-        bigintcalc \
-        bitset \
-        booktabs \
-        caption \
-        collection-langeuropean \
-        datetime \
-        epstopdf-pkg \
-        eso-pic \
-        etexcmds \
-        etoolbox \
-        fancyhdr \
-        float \
-        fmtcount \
-        fontaxes \
-        framed \
-        geometry \
-        gettitlestring \
-        grfext \
-        hycolor \
-        hyperref \
-        hyphen-norwegian \
-        intcalc \
-        kvdefinekeys \
-        kvsetkeys \
-        lastpage \
-        latex-amsmath-dev \
-        lato \
-        letltxmacro \
-        ltxcmds \
-        marginnote \
-        microtype \
-        oberdiek \
-        pdfescape \
-        pdflscape \
-        pdfpages \
-        ragged2e \
-        refcount \
-        rerunfilecheck \
-        sectsty \
-        stringenc \
-        subfig \
-        textpos \
-        titlesec \
-        ucs \
-        uniquecounter \
-        xcolor \
-        zapfding
+    && /root/.TinyTeX/bin/*/tlmgr path add 
 
 CMD ["R"]
