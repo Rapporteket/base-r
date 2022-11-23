@@ -36,7 +36,7 @@ RUN install2.r --error --skipinstalled --ncpus -1 \
     rapbase \
     remotes \
     && rm -rf /tmp/downloaded_packages \
-    && wget -qO- "https://yihui.org/tinytex/install-unx.sh" | sh, -s - --admin --no-path \
+    && wget -qO- "https://yihui.org/tinytex/install-unx.sh" | sh -s - --admin --no-path \
     && mv /root/.TinyTeX /.TinyTeX \
     && /.TinyTeX/bin/x86_64-linux/tlmgr path add \
     && tlmgr install \
